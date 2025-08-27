@@ -1,0 +1,16 @@
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local placeId = 126884695634066
+local privateServerId = "1852bfd0bbba64448ebaf2c8e3e9a08c"
+
+local success, err = pcall(function()
+    TeleportService:TeleportToPrivateServer(placeId, privateServerId, {player})
+end)
+
+if success then
+    warn("✅ Đang teleport vào server VIP...")
+else
+    warn("❌ Teleport thất bại:", err)
+end
